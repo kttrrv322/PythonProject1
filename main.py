@@ -64,9 +64,8 @@ class Suprematism(QWidget):
             self.qp.end()
 
     def draw(self):
-        R = random.randint(1, 150)
-        colors = [255, 255, 0]
-        self.qp.setBrush(QColor(*colors))
+        R = random.randint(20, 100)
+        self.qp.setBrush(QColor(*[random.randint(0, 255) for _ in range(3)]))
         self.qp.drawEllipse(QPointF(self.coords_[0], self.coords_[1]), R, R)
 
     def initUI(self):
